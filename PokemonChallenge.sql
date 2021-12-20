@@ -40,6 +40,6 @@ VALUES
 	((SELECT Id FROM Pdb.Pokemon WHERE Name='Ditto'),(SELECT Id FROM Pdb.Type WHERE Name='Normal'));
 
 SELECT Pdb.Pokemon.Id, Pdb.Pokemon.Name, Height, Weight, Pdb.Type.Id, Pdb.Type.Name, Pdb.PokemonType.ID
-FROM Pdb.Pokemon
-INNER JOIN Pdb.Type ON Pdb.PokemonType.PokemonID=Pdb.Pokemon.Id
-INNER JOIN Pdb.PokemonType ON Pdb.Type.Id=Pdb.PokemonType.TypeID
+FROM Pdb.PokemonType
+INNER JOIN Pdb.Type ON PDb.Type.Id=Pdb.PokemonType.TypeID
+INNER JOIN Pdb.Pokemon ON Pdb.PokemonType.PokemonID=Pdb.Pokemon.Id;
